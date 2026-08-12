@@ -40,16 +40,13 @@ public class CardDataManager
 {
     const int DECKNUM = 52;
     const int MAXPLAYERNUM = 1234;
-
+    // 암호화, 복호화 중 숫자가 커질 수 있기 때문에 BigInteger 사용
     // 암호화 하는데 필요한 공용 숫자
     BigInteger Modulus;
-
     // 셔플할때 쓸 개인적 암호(1개)
     BigInteger CommonKey;
-
     // 나의 개인적 개별 암호(52개)
     BigInteger[] Keys = new BigInteger[DECKNUM];
-
     // 다른 사람의 개별 암호 저장
     BigInteger[,] OtherKeys = new BigInteger[MAXPLAYERNUM, DECKNUM];
 
